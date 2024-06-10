@@ -1,0 +1,11 @@
+def next_greater_element(nums):
+    stack = []
+    result = {}
+    for num in nums:
+        while stack and stack[-1] < num:
+            result[stack.pop()] = num
+        stack.append(num)
+    return [result.get(num, -1) for num in nums]
+
+nums = [2, 4, 0, 9, 6]
+print(next_greater_element(nums))
