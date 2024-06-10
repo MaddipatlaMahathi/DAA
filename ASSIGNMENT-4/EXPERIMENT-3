@@ -1,0 +1,14 @@
+def min_seed_to_destroy(nums, space):
+    min_num = min(nums)
+    max_num = max(nums)
+    max_targets = 0
+    min_seed = min_num
+    for seed in range(min_num, max_num + 1):
+        targets = sum(1 for num in nums if (num - seed) % space == 0)
+        if targets > max_targets:
+            max_targets = targets
+            min_seed = seed
+    return min_seed
+nums = [3, 7, 8, 1, 1, 5]
+space = 2
+print(min_seed_to_destroy(nums, space))
