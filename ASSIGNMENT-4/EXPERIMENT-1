@@ -1,0 +1,10 @@
+def find_odd_string(words):
+    for i in range(len(words[0])):
+        expected_diff = ord(words[0][i+1]) - ord(words[0][i])
+        for word in words[1:]:
+            diff = ord(word[i+1]) - ord(word[i])
+            if diff != expected_diff:
+                return word
+
+words = ["adc", "wzy", "abc"]
+print(find_odd_string(words))
