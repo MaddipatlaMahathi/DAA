@@ -1,0 +1,9 @@
+def min_addition_to_beautiful(n, target):
+    digit_sum = sum(int(digit) for digit in str(n))
+    if digit_sum <= target:
+        return 0
+    additional_digits = (digit_sum - target + 8) // 9
+    return additional_digits
+n = 16
+target = 6
+print(min_addition_to_beautiful(n, target))
